@@ -19,6 +19,15 @@
 <meta name="twitter:title" content="Patino Davila Advisory — Fractional FP&amp;A for small business">
 <meta name="twitter:description" content="A monthly forecast, a one-page dashboard, and a strategy call — so you see a cash squeeze weeks before it happens.">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MP6LK9M1FT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MP6LK9M1FT');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -198,7 +207,7 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <div class="wordmark"><span class="dot"></span>Patino Davila Advisory</div>
-    <button type="button" class="btn btn-primary">Book a call</button>
+    <button type="button" class="btn btn-primary" data-cta-location="nav">Book a call</button>
   </div>
 </header>
 
@@ -210,10 +219,11 @@
       <h1>Your numbers,<br><span class="accent">read forward.</span></h1>
       <p class="lead">A monthly forecast, a one-page dashboard, and a strategy call — so you see a cash squeeze weeks before it happens, not the morning payroll won't clear.</p>
       <div class="cta-row">
-        <button type="button" class="btn btn-primary">Book a free cash-clarity call</button>
+        <button type="button" class="btn btn-primary" data-cta-location="hero">Book a free cash-clarity call</button>
         <a href="#deliver" class="btn btn-ghost">See what you get</a>
       </div>
-      <p class="trust">For owner-run businesses doing <span class="mono">$500K–$10M</span>. Month to month, cancel anytime.</p>
+      <p class="trust" style="margin-top:0.9rem">30 minutes, no obligation.</p>
+      <p class="trust" style="margin-top:0.4rem">For owner-run businesses doing <span class="mono">$500K–$10M</span>. Month to month, cancel anytime.</p>
     </div>
 
     <!-- SIGNATURE ELEMENT: a live 13-week cash-runway that dips under the minimum -->
@@ -282,7 +292,7 @@
     </div>
     <div class="reveal" style="margin-top:36px;text-align:center">
       <p style="color:var(--ink-soft);margin-bottom:14px">Want to see this with real numbers, not just descriptions?</p>
-      <a href="/sample-deliverable.pdf" target="_blank" class="btn btn-ghost">Download a full sample month</a>
+      <a href="/sample-deliverable.pdf" target="_blank" class="btn btn-ghost" id="sample-download">Download a full sample month</a>
     </div>
   </div>
 </section>
@@ -356,7 +366,7 @@
           <li>45-minute monthly strategy call</li>
           <li>Locked founding rate as we grow</li>
         </ul>
-        <button type="button" class="btn btn-primary">Claim a founding spot</button>
+        <button type="button" class="btn btn-primary" data-cta-location="founding">Claim a founding spot</button>
       </div>
       <div class="pcard reveal">
         <span class="plan">Standard</span>
@@ -368,7 +378,7 @@
           <li>Plain-English commentary</li>
           <li>45-minute monthly strategy call</li>
         </ul>
-        <button type="button" class="btn btn-ghost">Book a call</button>
+        <button type="button" class="btn btn-ghost" data-cta-location="standard">See if we're a fit</button>
       </div>
     </div>
     <p class="addons">Optional add-ons: <span class="mono">annual budget build</span> · <span class="mono">scenario modeling</span> (new location, big hire, financing) · <span class="mono">invoice &amp; AP automation</span>.</p>
@@ -432,7 +442,7 @@
     <span class="eyebrow">Start here</span>
     <h2>Thirty minutes. Your actual numbers.</h2>
     <p>We'll look at where you stand together and tell you honestly whether we can help. No pitch deck, no pressure — you'll leave with a clearer read on your cash either way.</p>
-    <a href="mailto:patinodavilaadvisory@gmail.com" class="btn btn-primary" style="background:#E7B45E;color:#173029">Book a free cash-clarity call</a>
+    <a href="mailto:patinodavilaadvisory@gmail.com" class="btn btn-primary" style="background:#E7B45E;color:#173029" data-cta-location="final">Book a free cash-clarity call</a>
   </div>
 </section>
 
@@ -499,6 +509,38 @@
       el.setAttribute("data-cal-link", CAL_LINK);
       el.setAttribute("data-cal-config", '{"layout":"month_view"}');
     });
+  });
+</script>
+
+<!-- GA4 event tracking: which CTA gets clicked, and whether a booking actually completes -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('[data-cta-location]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_clicked', { location: el.getAttribute('data-cta-location') });
+        }
+      });
+    });
+
+    var sampleLink = document.getElementById('sample-download');
+    if (sampleLink) {
+      sampleLink.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'sample_download_clicked');
+        }
+      });
+    }
+  });
+
+  // Cal.com fires this on its own window once a booking is confirmed.
+  Cal.ns.cashcall("on", {
+    action: "bookingSuccessful",
+    callback: function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'call_booked');
+      }
+    }
   });
 </script>
 
