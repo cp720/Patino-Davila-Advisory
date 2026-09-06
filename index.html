@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#F4F6F3;
@@ -76,8 +76,10 @@
   header.nav{position:sticky;top:0;z-index:50;background:rgba(244,246,243,.82);
     backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .wordmark{font-family:'Bricolage Grotesque';font-weight:700;font-size:1.28rem;letter-spacing:-.02em;display:flex;align-items:center;gap:.55em}
-  .wordmark .dot{width:11px;height:11px;border-radius:50%;background:var(--amber);display:inline-block;box-shadow:0 0 0 4px rgba(192,129,42,.16)}
+  .wordmark{font-family:'Archivo',sans-serif;font-size:1.28rem;display:flex;align-items:baseline;gap:.55em}
+  .wordmark .dot{width:11px;height:11px;border-radius:50%;background:var(--amber);display:inline-block;box-shadow:0 0 0 4px rgba(192,129,42,.16);align-self:center}
+  .wordmark .name{font-weight:600;letter-spacing:-.035em;color:var(--ink)}
+  .wordmark .tag{font-weight:400;letter-spacing:-.02em;color:var(--ink-soft)}
   .nav a.btn{padding:.6em 1.05em;font-size:.92rem}
 
   /* ---------- hero ---------- */
@@ -204,7 +206,7 @@
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <div class="wordmark"><span class="dot"></span>Patino Davila Advisory</div>
+    <div class="wordmark"><span class="dot"></span><span><span class="name">Patino Davila</span> <span class="tag">Advisory</span></span></div>
     <button type="button" class="btn btn-primary" data-cta-location="nav">Book a call</button>
   </div>
 </header>
@@ -446,7 +448,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap foot-inner">
-    <div class="wordmark" style="font-size:1.1rem"><span class="dot"></span>Patino Davila Advisory</div>
+    <div class="wordmark" style="font-size:1.1rem"><span class="dot"></span><span><span class="name">Patino Davila</span> <span class="tag">Advisory</span></span></div>
     <div>patinodavilaadvisory@gmail.com &nbsp;·&nbsp; 973-856-0624</div>
     <div class="mono" style="font-size:.78rem">© 2026 Patino Davila Advisory, LLC &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a></div>
   </div>
