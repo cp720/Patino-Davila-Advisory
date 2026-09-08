@@ -23,6 +23,6 @@ Fractional FP&A for owner-run businesses doing $400K-$5M in annual revenue. Mont
   - 45-minute monthly strategy call
 
 ## Contact
-- Email: patinodavilaadvisory@gmail.com
+- Email: cpatino@patinodavila.com
 - Phone: 973-856-0624
 - Book a call: https://cal.com/chamuel-patino-davila/30min-introductory-call

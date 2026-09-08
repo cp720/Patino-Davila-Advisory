@@ -354,7 +354,7 @@ wrapped(c, M + 16, y - 36, 'Strong operating month, one avoidable cash pinch on 
 
 c.setFont(FONT, 8)
 c.setFillColor(INK_SOFT)
-c.drawString(M, M, 'Prepared by Patino Davila Advisory  ·  patinodavilaadvisory@gmail.com / 973-856-0624')
+c.drawString(M, M, 'Prepared by Patino Davila Advisory  ·  cpatino@patinodavila.com / 973-856-0624')
 c.setFont(FONT, 7.5)
 c.drawRightString(PORT_W - M, M, 'Illustrative sample — fictional company, for demonstration purposes only.')
 
