@@ -26,6 +26,7 @@ Fractional FP&A for owner-run businesses doing $400K-$5M in annual revenue. Mont
 - Price: $1,500 flat, delivered in 10 business days
 - Method: value-based pricing. A value map of price vs. customer-perceived value across 6 to 8 competitors, scored with online reviews and competitor quotes
 - Scope: 1 customer segment, up to 3 core offerings
+- Best fit: standard, comparable offerings; customers compare alternatives; competitor prices published or quotable; owner sets prices. Target types: home services (HVAC, plumbing, electrical, landscaping, cleaning, pest control), patient-pay health & wellness (med spas, vet clinics, chiropractic, cosmetic dentistry), e-commerce/DTC, multi-location service menus (salons & barbershops, fitness studios, pet grooming & daycare, auto repair & detailing)
 - Includes:
   - Fair price range for each core offering, with the revenue impact and a cost/margin check
   - Value map against 6 to 8 competitors
