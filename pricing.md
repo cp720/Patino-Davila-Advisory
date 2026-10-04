@@ -22,6 +22,20 @@ Fractional FP&A for owner-run businesses doing $400K-$5M in annual revenue. Mont
   - Plain-English commentary
   - 45-minute monthly strategy call
 
+## Fair Price Review (one-time)
+- Price: $1,500 flat, delivered in 10 business days
+- Method: value-based pricing. A value map of price vs. customer-perceived value across 6 to 8 competitors, scored with online reviews and competitor quotes
+- Scope: 1 customer segment, up to 3 core offerings
+- Includes:
+  - Fair price range for each core offering, with the revenue impact and a cost/margin check
+  - Value map against 6 to 8 competitors
+  - Competitive scorecard
+  - Rollout plan (which price to change first, tiers or packages)
+  - Written report and 60-minute walkthrough call
+- Continue to the monthly plan within 30 days and the $499 setup fee is waived
+- Page: https://patinodavila.com/pricing-review
+- Book a fit call: https://cal.com/chamuel-patino-davila/pricing-review
+
 ## Contact
 - Email: cpatino@patinodavila.com
 - Phone: 973-856-0624
