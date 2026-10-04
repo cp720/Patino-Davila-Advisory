@@ -15,7 +15,7 @@ Fractional FP&A for owner-run businesses doing $400K-$5M in annual revenue. Mont
 
 ## Standard
 - Price: $1,250/month
-- One-time setup & onboarding fee: $899
+- One-time setup & onboarding fee: $499
 - Includes:
   - One-page monthly dashboard
   - 13-week cash flow forecast

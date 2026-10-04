@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--
+  PRICING & MARGIN REVIEW — Patino Davila Advisory
+  Standalone offer page served at /pricing-review. Styles mirror index.html.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing &amp; Margin Review — Patino Davila Advisory</title>
+<meta name="description" content="A one-time pricing and margin review for owner-run businesses doing $400K–$5M. In 10 business days: margin by client and service, specific pricing changes with the dollar impact, and a walkthrough call. $1,500 flat.">
+<link rel="canonical" href="https://patinodavila.com/pricing-review">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Patino Davila Advisory">
+<meta property="og:title" content="Pricing &amp; Margin Review — Patino Davila Advisory">
+<meta property="og:description" content="Find out which clients, services, and products actually make you money, and what to charge next. 10 business days, $1,500 flat.">
+<meta property="og:url" content="https://patinodavila.com/pricing-review">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pricing &amp; Margin Review — Patino Davila Advisory">
+<meta name="twitter:description" content="Find out which clients, services, and products actually make you money, and what to charge next.">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MP6LK9M1FT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MP6LK9M1FT');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F6F3;
+    --paper-2:#EAEEE8;
+    --card:#FFFFFF;
+    --ink:#173029;
+    --ink-soft:#4C5C55;
+    --line:#D7DDD4;
+    --teal:#2F7D72;
+    --amber:#C0812A;      /* the "alert" signal colour — here it marks the money-losing client */
+    --shadow:0 1px 2px rgba(23,48,41,.04),0 12px 30px -12px rgba(23,48,41,.12);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;line-height:1.08;letter-spacing:-.015em}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--amber);
+  }
+  a{color:inherit}
+  .mono{font-family:'IBM Plex Mono',monospace}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5em;
+    font-family:'Inter';font-weight:600;font-size:1rem;
+    padding:.85em 1.4em;border-radius:9px;border:1px solid transparent;
+    cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease,box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--ink);color:var(--paper)}
+  .btn-primary:hover{background:#0f2019;transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(244,246,243,.82);
+    backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .wordmark{font-family:'Archivo',sans-serif;font-size:1.28rem;display:flex;align-items:baseline;gap:.55em;text-decoration:none}
+  .wordmark .dot{width:11px;height:11px;border-radius:50%;background:var(--amber);display:inline-block;box-shadow:0 0 0 4px rgba(192,129,42,.16);align-self:center}
+  .wordmark .name{font-weight:600;letter-spacing:-.035em;color:var(--ink)}
+  .wordmark .tag{font-weight:400;letter-spacing:-.02em;color:var(--ink-soft)}
+
+  /* ---------- service tabs (header) ---------- */
+  .nav-right{display:flex;align-items:center;gap:28px}
+  .tabs{display:flex;gap:22px}
+  .tabs a{font-size:.95rem;font-weight:500;color:var(--ink-soft);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+  .tabs a:hover{color:var(--ink)}
+  .tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--amber)}
+  @media(max-width:640px){
+    .nav-inner{flex-wrap:wrap;height:auto;padding-top:10px;row-gap:4px}
+    .nav-right{display:contents}
+    .nav .wordmark{font-size:1.08rem}
+    .nav .btn{padding:.55em .9em;font-size:.88rem}
+    .tabs{order:3;width:100%;gap:0;border-top:1px solid var(--line);margin-top:6px}
+    .tabs a{flex:1;text-align:center;padding:10px 0}
+  }
+  .nav a.btn,.nav button.btn{padding:.6em 1.05em;font-size:.92rem}
+
+  /* ---------- hero ---------- */
+  .hero{padding:76px 0 84px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem);margin:.5rem 0 .1rem}
+  .hero h1 .accent{position:relative;white-space:nowrap}
+  .hero h1 .accent:after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.14em;background:var(--amber);opacity:.55;border-radius:2px}
+  .hero p.lead{font-size:1.2rem;color:var(--ink-soft);margin:1.15rem 0 1.8rem;max-width:38ch}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .trust{margin-top:1.7rem;font-size:.9rem;color:var(--ink-soft)}
+  .trust .mono{color:var(--ink);font-size:.82rem}
+
+  /* ---------- hero chart card: margin by client ---------- */
+  .chartcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;box-shadow:var(--shadow)}
+  .chartcard .ch-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+  .chartcard .ch-title{font-family:'Bricolage Grotesque';font-weight:600;font-size:1.02rem}
+  .chartcard .ch-sub{font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+  .bars{width:100%;height:auto;display:block}
+  .bar{fill:var(--teal)}
+  .bar.neg{fill:var(--amber)}
+  .zero{stroke:var(--ink);stroke-width:1.2}
+  .axislbl{font-family:'IBM Plex Mono';font-size:13px;fill:var(--ink-soft)}
+  .vallbl{font-family:'IBM Plex Mono';font-size:13px;fill:var(--ink);font-weight:500}
+  .callout{font-family:'IBM Plex Mono';font-size:13px;fill:var(--ink);font-weight:500}
+  .bar{transform-box:fill-box;transform-origin:left center;transition:transform 1.1s cubic-bezier(.22,.61,.36,1)}
+  .bar.neg{transform-origin:right center}
+  .bars.pre .bar{transform:scaleX(0)}
+
+  /* ---------- generic section ---------- */
+  section{padding:78px 0}
+  .band{background:var(--paper-2)}
+  .band-ink{background:var(--ink);color:var(--paper)}
+  .band-ink .eyebrow{color:#E7B45E}
+  .sec-head{max-width:56ch}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.4rem);margin:.7rem 0 0}
+  .sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
+  .band-ink .sec-head p{color:#C4D0CB}
+
+  /* ---------- problem ---------- */
+  .problem h2{font-size:clamp(1.8rem,3.4vw,2.6rem);max-width:22ch}
+  .problem .body{margin-top:1.4rem;max-width:62ch;color:#C4D0CB;font-size:1.14rem}
+  .problem .body strong{color:#fff;font-weight:600}
+
+  /* ---------- cards ---------- */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .dcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px 26px;transition:transform .18s ease,box-shadow .18s ease}
+  .dcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .dcard .tag{font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+  .dcard h3{font-size:1.28rem;margin:.5rem 0 .55rem}
+  .dcard p{color:var(--ink-soft);font-size:1rem}
+
+  /* ---------- steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:46px}
+  .step{position:relative;padding-top:20px;border-top:2px solid var(--ink)}
+  .step .num{font-family:'IBM Plex Mono';font-size:.82rem;color:var(--amber);letter-spacing:.1em}
+  .step h3{font-size:1.28rem;margin:.55rem 0 .5rem}
+  .step p{color:var(--ink-soft);font-size:1rem}
+
+  /* ---------- pricing ---------- */
+  .price-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:44px}
+  .pcard{background:var(--card);border:1px solid var(--ink);border-radius:16px;padding:32px 30px;position:relative;box-shadow:var(--shadow)}
+  .pcard .plan{font-family:'IBM Plex Mono';font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .pcard .amt{font-family:'Bricolage Grotesque';font-weight:700;font-size:2.7rem;margin:.35rem 0 .1rem;letter-spacing:-.02em}
+  .pcard .amt span{font-family:'Inter';font-size:1rem;font-weight:500;color:var(--ink-soft)}
+  .pcard .then{color:var(--ink-soft);font-size:.95rem;margin-bottom:1.3rem}
+  .pcard ul{list-style:none;margin:1.1rem 0 1.6rem;display:grid;gap:.6rem}
+  .pcard li{position:relative;padding-left:1.6em;font-size:1rem;color:var(--ink)}
+  .pcard li:before{content:"";position:absolute;left:0;top:.55em;width:.7em;height:.4em;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .price-note{font-size:1.2rem;line-height:1.5}
+  .price-note + p{margin-top:1rem;color:var(--ink-soft);font-size:1.05rem}
+
+  /* ---------- founders ---------- */
+  .founders{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;margin-top:44px}
+  .fcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+  .fcard .role{font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+  .fcard h3{font-size:1.35rem;margin:.5rem 0 .6rem}
+  .fcard p{color:var(--ink-soft);font-size:1rem}
+
+  /* ---------- faq ---------- */
+  .faq{margin-top:40px;border-top:1px solid var(--line)}
+  details{border-bottom:1px solid var(--line);padding:22px 0}
+  summary{cursor:pointer;list-style:none;font-family:'Bricolage Grotesque';font-weight:600;font-size:1.18rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  summary::-webkit-details-marker{display:none}
+  summary .pm{color:var(--amber);font-size:1.5rem;line-height:1;transition:transform .2s ease}
+  details[open] summary .pm{transform:rotate(45deg)}
+  details p{margin-top:.9rem;color:var(--ink-soft);max-width:66ch}
+
+  /* ---------- final cta ---------- */
+  .final{text-align:center}
+  .final h2{font-size:clamp(2rem,4vw,3rem);max-width:22ch;margin:.6rem auto 0}
+  .final p{color:#C4D0CB;margin:1.1rem auto 2rem;max-width:48ch;font-size:1.15rem}
+
+  /* ---------- footer ---------- */
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--ink-soft);font-size:.9rem}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:860px){
+    .hero-grid,.founders,.grid-3,.price-wrap{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr;gap:26px}
+    .hero{padding:48px 0 56px}
+    section{padding:56px 0}
+    .hero p.lead{max-width:none}
+    .chartcard{order:-1}
+    .price-wrap{gap:28px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;transition:none}
+    .bars.pre .bar{transform:none}
+    .bar{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="wordmark"><span class="dot"></span><span><span class="name">Patino Davila</span> <span class="tag">Advisory</span></span></a>
+    <div class="nav-right">
+      <nav class="tabs" aria-label="Services"><a href="/" data-cta-location="tab_monthly">Monthly Planning</a><a href="/pricing-review" aria-current="page">Pricing Review</a></nav>
+      <button type="button" class="btn btn-primary" data-cta-location="pr_nav">Book a call</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Pricing &amp; Margin Review</span>
+      <h1>Find out which clients <span class="accent">pay you</span>, and which cost you.</h1>
+      <p class="lead">A one-time review of your pricing and margins. In 10 business days you get margin by client and service, specific pricing changes with the dollar impact, and a call to walk through it.</p>
+      <div class="cta-row">
+        <button type="button" class="btn btn-primary" data-cta-location="pr_hero">Book a free 30-minute fit call</button>
+        <a href="#deliver" class="btn btn-ghost">See what you get</a>
+      </div>
+      <p class="trust" style="margin-top:0.9rem"><span class="mono">$1,500</span> flat. No retainer, no ongoing commitment.</p>
+      <p class="trust" style="margin-top:0.4rem">For owner-run businesses doing <span class="mono">$400K–$5M</span>.</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: margin by client, one of which is underwater -->
+    <div class="chartcard">
+      <div class="ch-head">
+        <span class="ch-title">Gross margin by client — last 12 months</span>
+        <span class="ch-sub">Sample</span>
+      </div>
+      <svg class="bars pre" id="marginbars" viewBox="0 0 520 300" role="img" aria-label="Sample chart: five clients with margins of 41%, 33%, 22%, 7%, and minus 11%. The last client costs more to serve than it pays.">
+        <!-- zero line at x=200; 1 percentage point = 6px -->
+        <line class="zero" x1="200" y1="18" x2="200" y2="252"/>
+        <text class="axislbl" x="20" y="47">Client A</text>
+        <rect class="bar" x="200" y="28" width="246" height="26" rx="3"/>
+        <text class="vallbl" x="454" y="47">41%</text>
+
+        <text class="axislbl" x="20" y="93">Client B</text>
+        <rect class="bar" x="200" y="74" width="198" height="26" rx="3"/>
+        <text class="vallbl" x="406" y="93">33%</text>
+
+        <text class="axislbl" x="20" y="139">Client C</text>
+        <rect class="bar" x="200" y="120" width="132" height="26" rx="3"/>
+        <text class="vallbl" x="340" y="139">22%</text>
+
+        <text class="axislbl" x="20" y="185">Client D</text>
+        <rect class="bar" x="200" y="166" width="42" height="26" rx="3"/>
+        <text class="vallbl" x="250" y="185">7%</text>
+
+        <text class="axislbl" x="20" y="231">Client E</text>
+        <rect class="bar neg" x="134" y="212" width="66" height="26" rx="3"/>
+        <text class="vallbl" x="208" y="231">−11%</text>
+
+        <text class="callout" x="20" y="284">Client E costs more to serve than it pays.</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="band-ink problem">
+  <div class="wrap">
+    <span class="eyebrow">The problem</span>
+    <h2>Most small businesses set their prices once, then adjust by feel.</h2>
+    <p class="body">You priced off what competitors charged, what felt fair, or what your first customers agreed to. Since then wages, costs, and scope have all moved. Revenue keeps growing, but <strong>some clients, jobs, or products now cost more to deliver than they bring in</strong>, and the profitable ones are quietly covering for them. Your P&amp;L shows the total. It doesn't show which ones.</p>
+  </div>
+</section>
+
+<!-- WHERE MARGIN HIDES -->
+<section id="where">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where margin hides</span>
+      <h2>Every business leaks margin in its own way.</h2>
+      <p>We start from how you actually make money, then look where the leaks usually are for a business like yours.</p>
+    </div>
+    <div class="grid-3">
+      <div class="dcard reveal">
+        <span class="tag">Agencies</span>
+        <h3>Retainers and scope creep</h3>
+        <p>Retainers that haven't moved in years, projects that run past their hours, and clients whose "quick asks" never get billed.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">Contractors</span>
+        <h3>Bids vs. actual job cost</h3>
+        <p>Which job types come in over budget, how change orders get priced, and whether your markup still covers today's labor and materials.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">E-commerce</span>
+        <h3>True margin per product</h3>
+        <p>What each product earns after shipping, discounts, returns, platform fees, and the ad spend it takes to sell it.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">Professional practices</span>
+        <h3>Rate per service</h3>
+        <p>What each service really earns per hour of staff time, and which fees haven't kept up with what it costs to deliver them.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">Distributors</span>
+        <h3>Margin by customer and SKU</h3>
+        <p>Which accounts are still profitable after volume discounts, freight, payment terms, and small-order handling.</p>
+      </div>
+      <div class="dcard reveal" style="background:transparent;border-style:dashed">
+        <span class="tag">Something else?</span>
+        <h3>Tell us how you charge</h3>
+        <p>Hourly, flat-fee, per unit, subscription. If you're not sure where to look, that's what the fit call is for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section id="deliver" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What you get</span>
+      <h2>A clear answer, with numbers behind it.</h2>
+      <p>Not a slide deck of best practices. Your own data, analyzed, and a specific plan for what to change.</p>
+    </div>
+    <div class="grid-3">
+      <div class="dcard reveal">
+        <span class="tag">Analysis</span>
+        <h3>Margin by client and service</h3>
+        <p>Which clients, services, jobs, or products actually make you money once the cost and time to deliver them are counted, and which don't.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">Recommendations</span>
+        <h3>Specific pricing changes</h3>
+        <p>New rates, minimums, packages, or tiers, each with its revenue impact estimated in dollars, so you know which change is worth making first.</p>
+      </div>
+      <div class="dcard reveal">
+        <span class="tag">Report + call</span>
+        <h3>A written report and a 60-minute walkthrough</h3>
+        <p>A plain-English report you can keep, plus a call to go through it together, answer questions, and plan how to roll out changes to clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Results in 10 business days.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="num">01 / Fit call</span>
+        <h3>A free 30-minute call</h3>
+        <p>We learn how you price and where you suspect money is slipping. If we don't think the review will pay for itself, we'll say so.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">02 / Data</span>
+        <h3>You share what you have</h3>
+        <p>QuickBooks access, sales by customer, and whatever time or job-cost records exist. Rough data is fine; we'll tell you exactly what we need.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">03 / Results</span>
+        <h3>Report and walkthrough</h3>
+        <p>Within 10 business days of receiving your data, you get the written report and we walk you through it on a call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Pricing</span>
+      <h2>One flat fee. One clear answer.</h2>
+    </div>
+    <div class="price-wrap">
+      <div class="pcard reveal">
+        <span class="plan">Pricing &amp; Margin Review</span>
+        <div class="amt">$1,500<span> flat</span></div>
+        <div class="then">one-time · delivered in 10 business days</div>
+        <ul>
+          <li>Margin by client, service, or product</li>
+          <li>Specific pricing changes with dollar impact</li>
+          <li>Written report you keep</li>
+          <li>60-minute walkthrough call</li>
+        </ul>
+        <button type="button" class="btn btn-primary" data-cta-location="pr_pricing">Book a free fit call</button>
+      </div>
+      <div class="reveal">
+        <p class="price-note">The math is simple: on a $1M business, a 2% pricing improvement is $20,000 a year. The review costs $1,500 once.</p>
+        <p>Want to keep going afterward? Our <a href="/">monthly financial planning service</a> tracks margin, cash, and forecasts every month. Start within 30 days of your review and we waive the $499 setup fee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO YOU'RE WORKING WITH -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Who you're working with</span>
+      <h2>Pricing analysis from someone who has taught it.</h2>
+    </div>
+    <div class="founders">
+      <div class="fcard reveal">
+        <span class="role">Leads your review</span>
+        <h3>Maria Davila</h3>
+        <p>An FP&amp;A manager with 10 years building budgets, forecasts, and controlling reporting across commercial, manufacturing, and legal-financial advisory work. As a university professor she taught pricing strategy and monetization models. She runs your analysis, writes your recommendations, and leads the walkthrough call.</p>
+      </div>
+      <div class="fcard reveal">
+        <span class="role">Systems &amp; automation</span>
+        <h3>Chamuel Patino</h3>
+        <p>6 years automating finance and operations workflows. He builds the data intake that turns your exports into a clean, analyzable dataset, so the review time goes into the analysis, not the cleanup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="band">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Questions</span>
+      <h2>Straight answers.</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>Will you just tell me to raise my prices?<span class="pm">+</span></summary>
+        <p>Not across the board. Sometimes the answer is a price increase on a few specific clients or services. Just as often it's a minimum order or project size, repackaging what you sell, billing for work you currently give away, or dropping something that loses money. Every recommendation comes with its estimated dollar impact.</p>
+      </details>
+      <details>
+        <summary>What if I don't track time or job costs?<span class="pm">+</span></summary>
+        <p>Most small businesses don't, at least not precisely. We work from what you have, such as payroll, invoices, and a short conversation about who works on what, and we're upfront about which numbers are estimates.</p>
+      </details>
+      <details>
+        <summary>Is my financial data safe?<span class="pm">+</span></summary>
+        <p>Yes. Your files live in a dedicated, access-controlled workspace, never a shared personal drive. Confidentiality is covered by your engagement letter, and we'll sign a separate NDA on request. If you have a preferred way to share files, we'll work inside it.</p>
+      </details>
+      <details>
+        <summary>Do I have to sign up for anything afterward?<span class="pm">+</span></summary>
+        <p>No. The review is a one-time project and the report is yours. If you'd like ongoing help, our monthly service is available, but it's entirely optional.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="call" class="band-ink final">
+  <div class="wrap">
+    <span class="eyebrow">Start here</span>
+    <h2>Thirty minutes to find out if your pricing is costing you.</h2>
+    <p>Tell us how you charge today. We'll tell you honestly whether a review is worth it for your business. No pitch deck, no pressure.</p>
+    <a href="mailto:cpatino@patinodavila.com?subject=Pricing%20%26%20Margin%20Review" class="btn btn-primary" style="background:#E7B45E;color:#173029" data-cta-location="pr_final">Book a free fit call</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-inner">
+    <a href="/" class="wordmark" style="font-size:1.1rem"><span class="dot"></span><span><span class="name">Patino Davila</span> <span class="tag">Advisory</span></span></a>
+    <div>cpatino@patinodavila.com &nbsp;·&nbsp; 973-856-0624</div>
+    <div class="mono" style="font-size:.78rem">© 2026 Patino Davila Advisory, LLC &nbsp;·&nbsp; <a href="/privacy.html">Privacy</a></div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // hero bars grow in
+  const bars = document.getElementById('marginbars');
+  if(bars){ requestAnimationFrame(()=>requestAnimationFrame(()=>bars.classList.remove('pre'))); }
+</script>
+
+<!-- ============================================================
+     Cal.com popup embed — same pattern as index.html.
+     Uses its own namespace so GA can tell bookings from this page
+     apart from homepage bookings, and points at its own Cal.com
+     event type so bookings show which offer they came from.
+     ============================================================ -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+
+  Cal("init", "pricingreview", { origin: "https://cal.com" });
+  Cal.ns.pricingreview("ui", { hideEventTypeDetails: false, layout: "month_view" });
+
+  var CAL_LINK = "chamuel-patino-davila/pricing-review";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var triggers = document.querySelectorAll('button.btn-primary, button.btn-ghost, a.btn-primary[href^="mailto:"]');
+    triggers.forEach(function (el) {
+      el.setAttribute("data-cal-namespace", "pricingreview");
+      el.setAttribute("data-cal-link", CAL_LINK);
+      el.setAttribute("data-cal-config", '{"layout":"month_view"}');
+    });
+  });
+</script>
+
+<!-- GA4 event tracking: same event names as the homepage, tagged with page=pricing_review -->
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('[data-cta-location]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'cta_clicked', { location: el.getAttribute('data-cta-location'), page: 'pricing_review' });
+        }
+      });
+    });
+  });
+
+  Cal.ns.pricingreview("on", {
+    action: "bookingSuccessful",
+    callback: function () {
+      if (typeof gtag === 'function') {
+        gtag('event', 'call_booked', { page: 'pricing_review' });
+      }
+    }
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://patinodavila.com/pricing-review#service",
+  "name": "Pricing & Margin Review",
+  "serviceType": "Pricing and profitability analysis",
+  "url": "https://patinodavila.com/pricing-review",
+  "areaServed": "US",
+  "provider": { "@id": "https://patinodavila.com/#organization" },
+  "description": "A one-time review of pricing and margins for owner-run businesses doing $400K–$5M: margin by client and service, specific pricing recommendations with estimated revenue impact, a written report, and a 60-minute walkthrough call, delivered in 10 business days.",
+  "offers": {
+    "@type": "Offer",
+    "price": "1500",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</body>
+</html>
