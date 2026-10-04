@@ -82,6 +82,21 @@
   .wordmark .dot{width:11px;height:11px;border-radius:50%;background:var(--amber);display:inline-block;box-shadow:0 0 0 4px rgba(192,129,42,.16);align-self:center}
   .wordmark .name{font-weight:600;letter-spacing:-.035em;color:var(--ink)}
   .wordmark .tag{font-weight:400;letter-spacing:-.02em;color:var(--ink-soft)}
+
+  /* ---------- service tabs (header) ---------- */
+  .nav-right{display:flex;align-items:center;gap:28px}
+  .tabs{display:flex;gap:22px}
+  .tabs a{font-size:.95rem;font-weight:500;color:var(--ink-soft);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent;transition:color .15s ease,border-color .15s ease}
+  .tabs a:hover{color:var(--ink)}
+  .tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--amber)}
+  @media(max-width:640px){
+    .nav-inner{flex-wrap:wrap;height:auto;padding-top:10px;row-gap:4px}
+    .nav-right{display:contents}
+    .nav .wordmark{font-size:1.08rem}
+    .nav .btn{padding:.55em .9em;font-size:.88rem}
+    .tabs{order:3;width:100%;gap:0;border-top:1px solid var(--line);margin-top:6px}
+    .tabs a{flex:1;text-align:center;padding:10px 0}
+  }
   .nav a.btn{padding:.6em 1.05em;font-size:.92rem}
 
   /* ---------- hero ---------- */
@@ -157,6 +172,10 @@
   .pcard ul{list-style:none;margin:1.1rem 0 1.6rem;display:grid;gap:.6rem}
   .pcard li{position:relative;padding-left:1.6em;font-size:1rem;color:var(--ink)}
   .pcard li:before{content:"";position:absolute;left:0;top:.55em;width:.7em;height:.4em;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .alt-offer{margin-top:22px;border:1px dashed var(--ink-soft);border-radius:16px;padding:24px 30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .alt-offer .plan{font-family:'IBM Plex Mono';font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
+  .alt-offer p{margin-top:.35rem;font-size:1.05rem;max-width:58ch}
+
 
   /* ---------- founders ---------- */
   .founders{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
@@ -209,7 +228,10 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <div class="wordmark"><span class="dot"></span><span><span class="name">Patino Davila</span> <span class="tag">Advisory</span></span></div>
-    <button type="button" class="btn btn-primary" data-cta-location="nav">Book a call</button>
+    <div class="nav-right">
+      <nav class="tabs" aria-label="Services"><a href="/" aria-current="page">Monthly Planning</a><a href="/pricing-review" data-cta-location="tab_pricing_review">Fair Price Review</a></nav>
+      <button type="button" class="btn btn-primary" data-cta-location="nav">Book a call</button>
+    </div>
   </div>
 </header>
 
@@ -373,7 +395,7 @@
       <div class="pcard reveal">
         <span class="plan">Standard</span>
         <div class="amt">$1,250<span> / month</span></div>
-        <div class="then">one-time setup &amp; onboarding: $899</div>
+        <div class="then">one-time setup &amp; onboarding: $499</div>
         <ul>
           <li>One-page monthly dashboard</li>
           <li>13-week cash flow forecast</li>
@@ -382,6 +404,13 @@
         </ul>
         <button type="button" class="btn btn-ghost" data-cta-location="standard">See if we're a fit</button>
       </div>
+    </div>
+    <div class="alt-offer reveal">
+      <div>
+        <span class="plan">Not ready for a monthly plan?</span>
+        <p>Start with a one-time Fair Price Review: see how your prices compare with 6 to 8 competitors and get a fair price range for your core offerings. $1,500 flat, results in 10 business days.</p>
+      </div>
+      <a href="/pricing-review" class="btn btn-ghost" data-cta-location="pricing_alt_offer">See the Fair Price Review</a>
     </div>
   </div>
 </section>
@@ -576,7 +605,7 @@
           "name": "Standard Plan",
           "price": "1250",
           "priceCurrency": "USD",
-          "description": "Monthly plan with a one-time $899 setup and onboarding fee."
+          "description": "Monthly plan with a one-time $499 setup and onboarding fee."
         }
       ]
     },
